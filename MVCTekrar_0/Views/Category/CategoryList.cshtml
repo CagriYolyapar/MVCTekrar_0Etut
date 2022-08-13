@@ -1,0 +1,16 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "CategoryList";
+}
+
+<h1>
+    Yeni kategori eklemek icin @Html.ActionLink("tıklayınız","AddCategory")
+</h1>
+
+<ul>
+    @foreach (Category item in Model.Categories)
+    {
+        <li>@item.CategoryName   @Html.ActionLink("Güncelle","UpdateCategory","Category",new { id=item.ID},new { @class="btn btn-warning"})   @Html.ActionLink("Sil","DeleteCategory","Category",new { id=item.ID},new { @class="btn btn-danger"})</li>     
+    }
+</ul>
+
